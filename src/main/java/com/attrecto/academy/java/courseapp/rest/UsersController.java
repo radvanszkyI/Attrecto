@@ -48,6 +48,13 @@ public class UsersController {
     	return userService.getUserById(id);
     }
 
+    @GetMapping(value= "/{id}/{filter}")
+    @ResponseStatus(HttpStatus.OK)
+    @Operation(summary = "Get all user with the specific name", security = {@SecurityRequirement(name = "token")})
+    public UserDto getUsersFilteredByName(@PathVariable("id") final Integer id,@PathVariable("filter") final String filter) {
+    	return userService.getUserById(id);
+    }
+
 	@PostMapping
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Create a new user", security = {@SecurityRequirement(name = "token")})
