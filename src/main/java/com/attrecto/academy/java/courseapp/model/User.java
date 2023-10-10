@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
 
-
+//database entity
 @Entity(name = "USERTABLE")
 public class User {
 	@Id

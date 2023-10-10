@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import com.attrecto.academy.java.courseapp.model.Course;
 import com.attrecto.academy.java.courseapp.model.dto.CourseDto;
 import com.attrecto.academy.java.courseapp.model.dto.MinimalCourseDto;
-
+// mapping dto and entity
 public class CourseMapper {
 
 	public static MinimalCourseDto mapToMinimal(final Course course) {
