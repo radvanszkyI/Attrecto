@@ -40,6 +40,11 @@ public class UserService {
 		return UserMapper.map(serviceUtil.findUserById(id));
 	}
 
+	public UserDto getUsersFilteredByName(final int id, final String filter) {
+		//TODO: use userRepository
+		return null;
+	}
+
 	public UserDto updateUser(int id, UpdateUserDto updateUserDto) {
 		Set<Course> courses = updateUserDto.getCourses().stream()
 				.map(courseId -> serviceUtil.findCourseById(courseId)).collect(Collectors.toSet());
