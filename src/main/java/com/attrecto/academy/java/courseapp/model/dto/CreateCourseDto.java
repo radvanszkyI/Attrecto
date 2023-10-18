@@ -1,7 +1,10 @@
 package com.attrecto.academy.java.courseapp.model.dto;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.attrecto.academy.java.courseapp.model.dto.CustomValidators.ValidDate;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Max;
@@ -21,6 +24,10 @@ public class CreateCourseDto {
 	@NotBlank
 	@Schema(description = "URL for the course", example = "https://attrecto.com/academy/course/java")	
 	private String url;
+	@NotBlank
+	@ValidDate
+	@Schema(description = "start and end date of course", example = "[2020.01.01,2020.06.31]")	
+	private Date[] datePriod= new Date[2];
 	@NotNull
 	@Schema(description = "Id of the of the course author", example = "1")	
 	private Integer authorId;
@@ -55,5 +62,11 @@ public class CreateCourseDto {
 	}
 	public void setStudentIds(Set<Integer> studentIds) {
 		this.studentIds = studentIds;
+	}
+	public Date[] getDatePriod() {
+		return datePriod;
+	}
+	public void setDatePriod(Date[] datePriod) {
+		this.datePriod = datePriod;
 	}
 }

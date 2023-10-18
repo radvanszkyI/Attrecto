@@ -1,5 +1,6 @@
 package com.attrecto.academy.java.courseapp.model;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,6 +22,8 @@ public class Course {
 	private String title;
 	private String description;
 	private String url;
+	private Date[] datePriod=new Date[2];
+
 	@ManyToOne
 	private User author;
 	@ManyToMany
@@ -74,4 +77,14 @@ public class Course {
 	public void setStudents(Set<User> students) {
 		this.students = students;
 	}
+	public Date[] getDatePriod() {
+		return datePriod;
+	}
+
+	public void setDatePriod(Date[] datePriod) {
+		this.datePriod=datePriod;
+	}
+
+	
+
 }

@@ -54,7 +54,7 @@ public class UsersController {
     public List<UserDto> getUsersFilteredByName(@PathVariable("id") final Integer id, @PathVariable("filter") final String nev) {
         return userService.getUsersFilteredByName(id,nev);
     }
-
+    
 	@PostMapping
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Create a new user", security = {@SecurityRequirement(name = "token")})

@@ -36,6 +36,7 @@ public class CourseService {
 		course.setTitle(createCourseDto.getTitle());
 		course.setDescription(createCourseDto.getDescription());
 		course.setUrl(createCourseDto.getUrl());
+		course.setDatePriod(createCourseDto.getDatePriod());
 		course.setAuthor(serviceUtil.findUserById(createCourseDto.getAuthorId()));
 		course.setStudents(createCourseDto.getStudentIds().stream().map(userId -> serviceUtil.findUserById(userId))
 				.collect(Collectors.toSet()));
@@ -48,6 +49,7 @@ public class CourseService {
 		course.setDescription(updateCourseDto.getDescription());
 		course.setTitle(updateCourseDto.getTitle());
 		course.setUrl(updateCourseDto.getUrl());
+		course.setDatePriod(updateCourseDto.getDatePriod());
 		course.setAuthor(serviceUtil.findUserById(updateCourseDto.getAuthorId()));
 		course.setStudents(updateCourseDto.getStudentIds().stream().map(userId -> serviceUtil.findUserById(userId))
 				.collect(Collectors.toSet()));
