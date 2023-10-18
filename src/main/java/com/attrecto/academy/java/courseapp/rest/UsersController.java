@@ -51,8 +51,8 @@ public class UsersController {
     @GetMapping(value= "/{id}/{filter}")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Get all user with the specific name", security = {@SecurityRequirement(name = "token")})
-    public UserDto getUsersFilteredByName(@PathVariable("id") final Integer id, @PathVariable("filter") final String nev) {
-        return userService.getUsersFilteredByName(id, nev);
+    public List<UserDto> getUsersFilteredByName(@PathVariable("id") final Integer id, @PathVariable("filter") final String nev) {
+        return userService.getUsersFilteredByName(id,nev);
     }
 
 	@PostMapping

@@ -40,9 +40,9 @@ public class UserService {
 		return UserMapper.map(serviceUtil.findUserById(id));
 	}
 
-	public UserDto getUsersFilteredByName(final int id, final String filter) {
-		//TODO: use userRepository
-		return null;
+	public List<UserDto> getUsersFilteredByName(final int id, final String name) {
+		
+		return userRepository.findByNameIgnoreCaseOrderByIdAscName(name).stream().map(UserMapper::map).toList();
 	}
 
 	public UserDto updateUser(int id, UpdateUserDto updateUserDto) {
